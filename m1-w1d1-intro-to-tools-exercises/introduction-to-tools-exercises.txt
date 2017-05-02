@@ -30,7 +30,7 @@ actual command from other text in Unix documentation.
     refer to?
 ----
 
-
+It references home directory
 ----
 3.  A good habit to develop, especially while you're developing your skills on 
     the command line, is to confirm your location after changing directories. 
@@ -38,7 +38,8 @@ actual command from other text in Unix documentation.
 ----
 
 $ pwd
-<type or copy-paste the result here>
+/Users/tylerwaddington/workspace/exercises/m1-w1d1-intro-to-tools-exercises/java-helloworld
+Techelevators-MacBook-Air:java-helloworld tylerwaddington$ 
 
 The present working directory displayed should match the directory you changed 
 to in Exercise 1.  Note, the two may not match at the very beginning if you
@@ -54,7 +55,14 @@ changes directory, and the "pwd" command reflects this.
 ----
 
 $ ls -la
-<type or copy-paste the result here>
+drwxr-xr-x  8 tylerwaddington  staff   272 May  1 15:32 .
+drwxr-xr-x  4 tylerwaddington  staff   136 May  1 15:32 ..
+-rw-r--r--  1 tylerwaddington  staff  1397 May  1 15:32 .classpath
+-rw-r--r--  1 tylerwaddington  staff   539 May  1 15:32 .project
+drwxr-xr-x  3 tylerwaddington  staff   102 May  1 15:32 database
+-rwxr-xr-x  1 tylerwaddington  staff  1091 May  1 15:32 pom.xml
+drwxr-xr-x  4 tylerwaddington  staff   136 May  1 15:32 src
+drwxr-xr-x  4 tylerwaddington  staff   136 May  1 15:32 target
 
 
 ----
@@ -62,14 +70,16 @@ $ ls -la
     Exercise 4 represent?
 ----
 
-<type or copy-paste your answer here>
+. is the current directory     .. is the parent of the file you're in
 
 ----
 6.  What are the names of the files, including any dot-files, displayed in the
     directory listing in Exercise 4?
 ----
 
-<type or copy-paste your answer here>
+-rw-r--r--  1 tylerwaddington  staff  1397 May  1 15:32 .classpath
+-rw-r--r--  1 tylerwaddington  staff   539 May  1 15:32 .project
+-rwxr-xr-x  1 tylerwaddington  staff  1091 May  1 15:32 pom.xml
 
 
 ----
@@ -77,7 +87,11 @@ $ ls -la
     the directory listing in Exercise 4?
 ----
 
-<type or copy-paste your answer here>
+drwxr-xr-x  4 tylerwaddington  staff   136 May  1 15:32 src
+drwxr-xr-x  4 tylerwaddington  staff   136 May  1 15:32 target
+drwxr-xr-x  3 tylerwaddington  staff   102 May  1 15:32 database
+drwxr-xr-x  8 tylerwaddington  staff   272 May  1 15:32 .
+drwxr-xr-x  4 tylerwaddington  staff   136 May  1 15:32 ..
 
 
 ----
@@ -123,13 +137,19 @@ You are encouraged to make "less" part of your standard command line toolkit.
 Did you remember to save "m1-introduction-to-tools-exercise.txt"?
 
 $ git status
-<type or copy-paste the result here>
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   ../introduction-to-tools-exercises.txt
 
 $ git add .
-<type or copy-paste the result here>
+nothing
 
 $ git commit -m "Good stopping point"
-<type or copy-paste the result here>
+	modified:   ../introduction-to-tools-exercises.txt
 
 Note, you do not need to push this commit up to BitBucket. The typical Git 
 workflow is to many small commits to your local repo, with pushes up to 
@@ -141,9 +161,8 @@ BitBucket when a feature, fix, or in this case, assignment is finished.
     Show your present working directory after the change.
 ----
 
-$ cd src/main/java/com/techelevator
-$ <enter command to display present working directory>
-<type or copy-paste your present working directory here>
+/Users/tylerwaddington/workspace/exercises/m1-w1d1-intro-to-tools-exercises/java-helloworld/src/main/java/com/techelevator
+Techelevators-MacBook-Air:techelevator tylerwaddington$ 
 
 
 ----
@@ -151,7 +170,7 @@ $ <enter command to display present working directory>
     path?
 ----
 
-<type your answer here>
+Relative
 
 
 ----
