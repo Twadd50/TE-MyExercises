@@ -3,16 +3,29 @@ package com.techelevator;
 public class Exercises {
 		
 	/* 
-     1. The parameter weekday is true if it is a weekday, and the parameter vacation is true if we are on 
+     1. The parameter weekday  (true if weekday/ false if weekend)    is true if it is a weekday, and the parameter vacation is true if we are on 
 	 vacation. We sleep in if it is not a weekday or we're on vacation. Return true if we sleep in.
 	 sleepIn(false, false) → true
 	 sleepIn(true, false) → false
 	 sleepIn(false, true) → true
 	 */
 	public boolean sleepIn(boolean weekday, boolean vacation) {
-		return false;
+		if(weekday == false || vacation == true) {
+			return true;
+		} else { return false;
+		
+		}
 	}
-
+	
+	
+	/*
+	 * Shorter way to write 
+	 
+	 public boolean sleepIn(boolean weekday, boolean vacation) {
+	 	return (! weekday || false);
+	 }
+	 
+	*/
 	/*
 	 2. We have two monkeys, a and b, and the parameters aSmile and bSmile indicate if each is smiling. 
 	 We are in trouble if they are both smiling or if neither of them is smiling. Return true if we 
@@ -20,10 +33,19 @@ public class Exercises {
 	 monkeyTrouble(true, true) → true
 	 monkeyTrouble(false, false) → true
 	 monkeyTrouble(true, false) → false
+	 
 	 */
 	public boolean monkeyTrouble(boolean aSmile, boolean bSmile) {
-		return false;
+		if ((aSmile == true && bSmile == true) || (aSmile == false && bSmile == false)) {
+			return true;
+		}	
+		else { 
+			return false;	
+		}
 	}
+		
+		
+	
 	
 	/*
 	 3. Given two int values, return their sum. Unless the two values are the same, then return double their sum.
@@ -32,7 +54,12 @@ public class Exercises {
 	 sumDouble(2, 2) → 8
 	 */
 	public int sumDouble(int a, int b) {
-		return 0;
+		if (a == b){
+			return (a + b) * 2;
+		}
+		else { 
+			return a + b;
+		}
 	}
 
 	/*
@@ -45,9 +72,14 @@ public class Exercises {
 	 diff21(-10) → 31
 	 */
 	public int diff21(int n) {
-		return 0;
+		if (Math.abs(21 - n) > 21){
+			return 21 - n * 2;
+		}
+		else {
+			return (Math.abs(21 - n));
+		}
+		
 	}
-
 	/*
 	 5. We have a loud talking parrot. The "hour" parameter is the current hour time in the range 0..23. 
 	 We are in trouble if the parrot is talking and the hour is before 7 or after 20. Return true if 
@@ -57,50 +89,71 @@ public class Exercises {
 	 parrotTrouble(false, 6) → false
 	 */
 	public boolean parrotTrouble(boolean talking, int hour) {
+		if (talking == false){
+			return false;
+		} 	  else if ((hour < 7) || (hour > 20)) {
+			return true;
+		}
 		return false;
 	}
 
 	/*
-	 6. Given 2 ints, a and b, return true if one if them is 10 or if their sum is 10.
+	 6. Given 2 ints, a and b, return true if one of them is 10 or if their sum is 10.
 	 makes10(9, 10) → true
 	 makes10(9, 9) → false
 	 makes10(1, 9) → true
 	 */
 	public boolean makes10(int a, int b) {
+		if (a + b == 10) {
+			return true;		
+		}
+		else if ((a == 10) || (b == 10)){
+			return true;
+		}
 		return false;
 	}
+	
 
 	/*
-	 7. Given 2 int values, return true if one is negative and one is positive. Except if the parameter 
+	??? 7. Given 2 int values, return true if one is negative and one is positive. Except if the parameter 
 	 "negative" is true, then return true only if both are negative.
 	 posNeg(1, -1, false) → true
 	 posNeg(-1, 1, false) → true
 	 posNeg(-4, -5, true) → true
 	 */
 	public boolean posNeg(int a, int b, boolean negative) {
-		return false;
+	
+			
 	}
+		
+	
 
 	/*
-	 8. Return true if the given non-negative number is a multiple of 3 or a multiple of 5. 
-	 (Hint: Think "mod".)
+	??? 8. Return true if the given non-negative number is a multiple of 3 or a multiple of 5. 
+	 (Hint: Think "modulo".)
 	 or35(3) → true
  	 or35(10) → true
 	 or35(8) → false
 	 */
 	public boolean or35(int n) {
+		if (35 % )
+		
+		
+		
 		return false;
 	}
 
 	/*
-	 9. Given two temperatures, return true if one is less than 0 and the other is greater than 100.
+	??? 9. Given two temperatures, return true if one is less than 0 and the other is greater than 100.
 	 icyHot(120, -1) → true
 	 icyHot(-1, 120) → true
 	 icyHot(2, 120) → false
 	 */
 	public boolean icyHot(int temp1, int temp2) {
-		return false;
-	}
+		if 
+				return false;
+		
+	
 
 	/*
 	 10. Given 2 int values, return true if either of them is in the range 10..20 inclusive.
@@ -109,7 +162,12 @@ public class Exercises {
 	 in1020(8, 99) → false
 	 */
 	public boolean in1020(int a, int b) {
-		return false;
+		if ((a == 5) && (b == 30)) {
+		return true;
+		}
+			else 
+				return false;
+		
 	}
 
 	/*

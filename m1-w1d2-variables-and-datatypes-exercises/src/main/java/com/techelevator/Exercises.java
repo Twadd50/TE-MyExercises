@@ -159,17 +159,28 @@ public class Exercises {
         /*
         17. Megan has 19 seashells. How many more seashells does she need to
         find to have 25 seashells in her collection?
-        */
+        */int currentNumber = 19;
+          int numberNeeded  = 6;
+          int fullCollection = currentNumber + numberNeeded;
+          System.out.println("Megan needs to find \"" + fullCollection + "\" more seashells to have 25");
         
         /*
         18. Brad has 17 balloons. 8 balloons are red and the rest are green. How
         many green balloons does Brad have?
         */
+          int redBalloons = 8;
+          int setOfBalloons = 17;
+          int numberOfGreenBalloons = setOfBalloons - redBalloons;
+          System.out.print("Brad has \"" + numberOfGreenBalloons + "\" ");
             
         /*
         19. There are 38 books on the shelf. Marta put 10 more books on the shelf.
         How many books are on the shelf now?
         */
+          int booksOnShelf = 38;
+          int booksPutBackOnShelf = 10;
+          int totalBookNumber = booksOnShelf + booksPutBackOnShelf;
+          System.out.print("There are now \"" + totalBookNumber + "\" books on the shelf ");
         
         /*
         20. A bee has 6 legs. How many legs do 8 bees have?
