@@ -122,7 +122,7 @@ public class Exercises {
 	 posNeg(-4, -5, true) → true
 	 */
 	public boolean posNeg(int a, int b, boolean negative) {
-	
+	return false;
 			
 	}
 		
@@ -136,7 +136,7 @@ public class Exercises {
 	 or35(8) → false
 	 */
 	public boolean or35(int n) {
-		if (35 % )
+	//	if (35 % )
 		
 		
 		
@@ -150,10 +150,15 @@ public class Exercises {
 	 icyHot(2, 120) → false
 	 */
 	public boolean icyHot(int temp1, int temp2) {
-		if 
-				return false;
-		
-	
+		if ((temp1 < 0) && (temp2 > 100)) {
+			return true;
+
+		} else if ((temp2 < 0) && (temp1 > 100)) {
+			return true;
+		} else
+			return false;
+
+	}
 
 	/*
 	 10. Given 2 int values, return true if either of them is in the range 10..20 inclusive.
@@ -162,7 +167,7 @@ public class Exercises {
 	 in1020(8, 99) → false
 	 */
 	public boolean in1020(int a, int b) {
-		if ((a == 5) && (b == 30)) {
+		if ((a >= 10) || (b <= 20)) {
 		return true;
 		}
 			else 
@@ -210,6 +215,8 @@ public class Exercises {
 	 in3050(40, 50) → true
 	 */
 	public boolean in3050(int a, int b) {
+	
+	
 		return false;
 	}
 
