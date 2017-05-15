@@ -19,6 +19,7 @@ public class Television {
 	public void turnOn() {
 		if (isOn == false)
 			isOn = true;
+		if 
 }
 	public void changeChannel(int newChannel) {
 		if ( isOn == true)
@@ -40,7 +41,7 @@ public class Television {
 	public void raiseVolume() {
 		if( isOn == true)
 			for(currentVolume : currentVolume) {
-			currentVolume = currentVolume + 1;
+				currentVolume = currentVolume + 1;
 		}
 	}
 	public void lowerVolume() {

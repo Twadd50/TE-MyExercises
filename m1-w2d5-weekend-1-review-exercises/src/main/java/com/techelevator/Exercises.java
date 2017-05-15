@@ -10,6 +10,8 @@ public class Exercises {
 	 */
 	public int arrayCount9(int[] nums) {
 		return 0;
+		public int arrayCount(int[] nums)
+		
 	}
 
 	/*
