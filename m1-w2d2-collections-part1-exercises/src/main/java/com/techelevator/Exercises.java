@@ -1,5 +1,6 @@
 package com.techelevator;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
@@ -22,17 +23,27 @@ public class Exercises {
 	 array2List( {"Left", "Right", "Forward", "Back"} )  ->  ["Left", "Right", "Forward", "Back"] 
 	 */
 	public List<String> array2List(String[] stringArray) {
-		return null;
+		List<String> result = new ArrayList<String>();
+		for(String x : stringArray) {
+			result.add(x); 
+		}
+		return result;
 	}
 	
 	/*
-	 Given a list of Strings, return an array containing the same Strings in the same order 
+	 Given a list of Strings, return an array containing the same Strings in the same order                      ??????????
 	 list2Array( ["Apple", "Orange", "Banana"] )  ->  {"Apple", "Orange", "Banana"}
 	 list2Array( ["Red", "Orange", "Yellow"] )  ->  {"Red", "Orange", "Yellow"}
 	 list2Array( ["Left", "Right", "Forward", "Back"] )  ->  {"Left", "Right", "Forward", "Back"}
 	 */
 	public String[] list2Array(List<String> stringList) {
-		return null;
+		String[] result = new String[stringList.size()];
+		
+		for(int i = 0; i < result.length; i++){
+			result[i] = stringList.get(i);
+		}
+		
+		return result;
 	}
 	
 	/*
@@ -43,7 +54,14 @@ public class Exercises {
 	 no4LetterWords( {"Jack", "Jill", "Jane", "John", "Jim"} )  ->  ["Jim"]
 	 */
 	public List<String> no4LetterWords(String[] stringArray) {
-		return null;
+		List<String> result = new ArrayList<String>();
+		for(String x : stringArray) {
+			if(x.length() != 4) {
+				result.add(x);																		//???????????
+			}
+
+		}
+		return result;	
 	}
 
 
@@ -55,8 +73,17 @@ public class Exercises {
 	 reverseList( ["jingle", "bells", "jingle", "bells", "jingle", "all", "the", "way"} )
 		-> ["way", "the", "all", "jingle", "bells", "jingle", "bells", "jingle"]
 	 */
-	public List<String> reverseList(List<String> stringList) {
-		return null;
+	public List<String> reverseList(List<String> stringList) {                            
+		Stack<String> stack = new Stack<String>();
+		for(String color : stringList) {
+			stack.push(color);	
+		}
+		List<String> result = new ArrayList<String>();
+		while(!stack.empty()) {
+			result.add(stack.pop());
+		}
+		return result;
+	
 	}
 
 	/*
@@ -66,7 +93,10 @@ public class Exercises {
 	 arrayInt2ListDouble( {84, 99, 3285, 13, 877} ) -> [42, 49.5, 1642.5, 6.5, 438.5]
 	 */
 	public List<Double> arrayInt2ListDouble(int[] intArray) {
-		return null;
+		List<Double> result = new ArrayList<Double>();
+		
+		
+		
 	}
 	
 	/*
@@ -86,7 +116,13 @@ public class Exercises {
 	 oddOnly( {734, 233, 782, 811, 3, 9999} ) -> [233, 811, 3, 9999]  
 	 */
 	public List<Integer> oddOnly(Integer[] integerArray) {
-		return null;
+		List<Integer> result = new ArrayList<Integer>();
+		for (Integer number : integerArray) {
+			if(number % 2 == 1) {
+				result.add(number);
+			}
+		}
+		return result;
 	}
 	
 	/* 

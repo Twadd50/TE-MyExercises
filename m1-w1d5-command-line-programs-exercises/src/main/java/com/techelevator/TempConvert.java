@@ -1,5 +1,7 @@
 package com.techelevator;
 
+import java.util.Scanner;
+
 /*
  The Fahrenheit to Celsius conversion formula is:
  	Tc = (Tf - 32) / 1.8
@@ -22,7 +24,23 @@ package com.techelevator;
 public class TempConvert {
 
 	public static void main(String[] args) {
-
+		
+		Scanner scan = new Scanner(System.in);
+		System.out.println("What is the temp?");
+		
+		String tempString = scan.nextLine();
+		double tempInt = Integer.parseInt(tempString); 					//parseInt is taking the "tempstring" AKA what the  
+																	//user types takes a string and turns it into a an integer
+	
+		double tempInt = tempInt -32 * 5 / 9;
+	
 	}
-
+	
 }
+
+
+
+
+
+
+

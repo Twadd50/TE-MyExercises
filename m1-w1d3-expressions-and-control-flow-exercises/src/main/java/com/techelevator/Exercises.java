@@ -117,13 +117,24 @@ public class Exercises {
 	/*
 	??? 7. Given 2 int values, return true if one is negative and one is positive. Except if the parameter 
 	 "negative" is true, then return true only if both are negative.
-	 posNeg(1, -1, false) → true
+	 posNeg(1, -1, false) → true													//else if 
 	 posNeg(-1, 1, false) → true
 	 posNeg(-4, -5, true) → true
 	 */
 	public boolean posNeg(int a, int b, boolean negative) {
-	return false;
+		if (a < 0 && b > 0 && negative == false) {
+			return true;
+		}
+		
+		else if ( a > 0 && b < 0 && negative == false) {
+			return true;
 			
+		}
+		else if (a < 0 && b < 0 && negative == true) {
+			return true;
+		}
+		else return false;
+				
 	}
 		
 	
@@ -136,11 +147,17 @@ public class Exercises {
 	 or35(8) → false
 	 */
 	public boolean or35(int n) {
-	//	if (35 % )
+		if ( n % 3 == 0) {
+			return true;
+		}
+			
+		else if (n % 5 == 0)  {
+			return true;
+		}
 		
-		
-		
-		return false;
+		else {
+			return false;
+		}
 	}
 
 	/*

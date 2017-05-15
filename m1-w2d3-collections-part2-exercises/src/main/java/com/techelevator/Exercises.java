@@ -1,5 +1,6 @@
 package com.techelevator;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class Exercises {
@@ -32,13 +33,30 @@ public class Exercises {
 	 * animalGroupName("") -> "unknown"
 	 * animalGroupName("walrus") -> "unknown"
 	 * 
-	 */
+	 */                             //       (key)
 	public String animalGroupName(String animalName) {
-		return null;
+		Map<String, String> groupName = new HashMap<String, String>();
+		groupName.put("rhino",  "Crash");
+		groupName.put("giraffe", "Tower");
+		groupName.put("elephant", "Herd");
+		groupName.put("lion", "Pride");
+		groupName.put("crow", "Murder");
+		groupName.put("pigeon", "Kit");
+		groupName.put("flamingo", "Pat");
+		groupName.put("deer", "Herd");
+		groupName.put("dog", "Pack");
+		groupName.put("crocodile", "Float");
+		if (groupName.containsKey(animalName)) {
+			return null;
+		}
+		
+		return groupName.get(animalName.toLowerCase());
+		
+	
 	}
 
 	/*
-	 * Given an String item number (a.k.a. SKU), return the discount percentage if the item is on sale.
+	 * Given a String item number (a.k.a. SKU), return the discount percentage if the item is on sale.
 	 * If the item is not on sale, return 0.00.
 	 * 
 	 * If the item number is empty or null, return 0.00.
@@ -60,7 +78,26 @@ public class Exercises {
 	 * 
 	 */
 	public Double isItOnSale(String itemNumber) {
-		return null;
+		Map<String, Double> isItOnSale = new HashMap<String, Double>();
+		isItOnSale.put("kitchen4001", 0.20 );
+		isItOnSale.put("garage1070", 0.15);
+		isItOnSale.put("livingroom", 0.10);
+		isItOnSale.put("kitchen6073", 0.40);
+		isItOnSale.put("bedroom3434", 0.60);
+		isItOnSale.put("bath0073"  , 0.15);
+		if (!isItOnSale.containsKey(itemNumber)) {
+			return 0.00; 
+			
+		}
+	
+		
+		
+		return isItOnSale.get(itemNumber.toLowerCase());
+		
+		
+		
+		
+		
 	}
 	
 	/*
@@ -74,33 +111,92 @@ public class Exercises {
 	 * 
 	 */
 	public Map<String, Integer> robPeterToPayPaul(Map<String, Integer> peterPaul) {
-		return null;
+		
+		int halfPetersMoney = peterPaul.get("Peter") - peterPaul.get("Peter") / 2;
+		int paulPlusPeter = peterPaul.get("Paul") + (peterPaul.get("Peter") / 2);
+																				//In English
+		if(peterPaul.get("Peter") > 0 && peterPaul.get("Paul") < 1000) {  //if peter has more than 0 and paul has less than 10
+			peterPaul.put("Peter", halfPetersMoney);  					 //  peter gets half of pauls money
+			peterPaul.put("Paul", paulPlusPeter);						//
+		}
+		
+		return peterPaul;
 	}
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
     /*
-	 * Modify and return the given map as follows: if "Peter" has $50 or more, AND "Paul" has $100 or more,
+	 * Modify and return the given map as follows: if "Peter" has $50 or more, AND "Paul" has $100 or more,    	
 	 * then create a new "PeterPaulPartnership" worth a combined contribution of a quarter of each partner's
 	 * current worth.
 	 * 
 	 * peterPaulPartnership({"Peter": 5000, "Paul": 10000}) → {"Peter": 3750, "Paul": 7500, "PeterPaulPartnership": 3750}
 	 * peterPaulPartnership({"Peter": 3333, "Paul": 1234567890}) → {"Peter": 3333, "Paul": 1234567890}
 	 * 
-	 */
-	public Map<String, Integer> peterPaulPartnership(Map<String, Integer> peterPaul) {
-		return null;
+	 */																	//	(map)
+	public Map<String, Integer> peterPaulPartnership(Map<String, Integer> peterPaul) {					//string = key // integer = value
+		int petersMoney = peterPaul.get("Peter");
+		int paulsMoney   = peterPaul.get("Paul");
+		int peterPaulPartnership = (petersMoney + paulsMoney) / 4;
+	
+				
+		
+		if((petersMoney >= 5000) && (paulsMoney >= 10000)) {
+			peterPaul.put("PeterPaulPartnership", peterPaulPartnership);
+			petersMoney = petersMoney - petersMoney / 4;
+			paulsMoney = paulsMoney - paulsMoney / 4;
+			peterPaul.put("Peter", petersMoney);
+			peterPaul.put("Paul", paulsMoney);
+			
+		}
+			return peterPaul;
 	}
 	
+	
+	
+	
+	
+	
+	
+	
+	
 	/*
-	 * Given an array of non-empty strings, return a Map<String, String> where for every different string in the array, 
+	 * Given an array of non-empty strings, return a Map<String, String> where for every different string in the array,      first letter key/ last letter value
 	 * there is a key of its first character with the value of its last character.
 	 *
 	 * beginningAndEnding(["code", "bug"]) → {"b": "g", "c": "e"}
 	 * beginningAndEnding(["man", "moon", "main"]) → {"m": "n"}
-	 * beginningAndEnding(["muddy", "good", "moat", "good", "night"]) → {"g": "d", "m": "t", "n": "t"}
-	 */
+	 * beginningAndEnding(["muddy", "good", "moat", "good", "night"]) → {"g": "d", "m": "t", "n": "t"}   
+	 * 
+	 *                                                
+	 *                         
+	 *///						(method)				(parameter) = in between parenthesis)					//maps have no order only keys and values
 	public Map<String, String> beginningAndEnding(String[] words) {
-		return null;
+		Map<String, String> newMap = new HashMap <String, String>();  
+		for (String word:words)	{																		//for each word in words
+			newMap.put(word.substring(0, 1), word.substring(word.length() - 1));																						//for each string "word" in words
+		}
+		return newMap;
+		
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	/*
 	 * Given an array of strings, return a Map<String, Integer> with a key for each different string, with the value the 
