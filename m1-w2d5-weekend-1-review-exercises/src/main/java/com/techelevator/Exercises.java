@@ -2,15 +2,24 @@ package com.techelevator;
 
 public class Exercises {
 
-	/*
+	/*						????										returning array = int
+	 * 																	returning boolean = no int
+	 * 
+	 * 
 	 Given an array of ints, return the number of 9's in the array.
 	 arrayCount9([1, 2, 9]) → 1
 	 arrayCount9([1, 9, 9]) → 2
 	 arrayCount9([1, 9, 9, 3, 9]) → 3
 	 */
 	public int arrayCount9(int[] nums) {
-		return 0;
-		public int arrayCount(int[] nums)
+		int numberOfNine = i;
+		for(int i = 0; i < nums.length; i++) {
+			if(nums[i] == 9) {
+				numberOfNine = i;
+				return numberOfNine = i;
+			}
+		
+		}
 		
 	}
 
@@ -21,20 +30,48 @@ public class Exercises {
 	 arrayFront9([1, 2, 3, 4, 5]) → false
 	 */
 	public boolean arrayFront9(int[] nums) {
+		int times = 4;
+		if (nums.length < 4) {
+			times = nums.length;
+		}
+		for (int i = 0; i < times - 1; i++) {
+			if (nums[i] == 9) {
+				return true;
+
+			}
+		}
 		return false;
 	}
 
-	/*
+	/*   		???????
+	 * 
+	 * 
+	 * 
 	 Given an array of ints, return true if .. 1, 2, 3, .. appears in the array somewhere.
 	 array123([1, 1, 2, 3, 1]) → true
 	 array123([1, 1, 2, 4, 1]) → false
 	 array123([1, 1, 2, 1, 2, 3]) → true
 	 */
+	
 	public boolean array123(int[] nums) {
-		return false;
+		for (int i = 0; i < nums.length; i++) {
+			if(nums[i] == 1) {
+				if(nums[i] == 2) 
+					if(nums[i] == 3) 
+						return true;
+				
+			}
+		}				return false;
+		
 	}
 	
-	/*
+	
+	
+	
+	
+	
+			
+	/*			????
 	 Given an array of ints, we'll say that a triple is a value appearing 3 times in a row in the array. 
 	 Return true if the array does not contain any triples.
 	 noTriples([1, 1, 2, 2, 1]) → true
@@ -42,9 +79,23 @@ public class Exercises {
 	 noTriples([1, 1, 1, 2, 2, 2, 1]) → false
 	 */
 	public boolean noTriples(int[] nums) {
-		return false;
+	for(int i = 0; i < nums.length - 1; i++) {
+		if ((nums[i] == 3) && (nums[i + 1] == 3)) {
+			if(nums[i + 2] == 3) {
+				
+			}
+			return false;
+			
+		}
+	}	return true;
 	}
 
+	
+	
+	
+	
+	
+	
 	/*
 	 Given an array of ints, return a new array length 2 containing the first and last elements from the 
 	 original array. The original array will be length 1 or more.

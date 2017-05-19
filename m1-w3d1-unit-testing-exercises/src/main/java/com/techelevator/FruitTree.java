@@ -4,6 +4,7 @@ public class FruitTree {
 
 	private String typeOfFruit;
     private int piecesOfFruitLeft;
+	public boolean apple;
 
     /**
      * Creates a new fruit tree. 

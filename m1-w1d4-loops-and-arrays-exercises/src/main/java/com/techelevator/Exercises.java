@@ -120,12 +120,13 @@ public class Exercises {
 	public int sum2(int[] nums) {
 		int sum = 0
 		if(nums.length >= 2) {
-		else if () {
+		}else if () {
 			
 			
 		}
+	
 	}
-	}
+	
 	/*
 	 Given 2 int arrays, a and b, each length 3, return a new array length 2 containing their middle 
 	 elements.

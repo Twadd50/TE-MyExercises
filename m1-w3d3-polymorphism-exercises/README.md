@@ -9,7 +9,7 @@ Each implementation class requires unit tests to verify its correctness.
  
 #### DeliveryDriver Interface
 
-calculateRate( distance, weight)
+calculateRate( distance, weight in OZs)
     
 #### Implementing Classes
 
@@ -18,7 +18,7 @@ calculateRate( distance, weight)
 The Postal Service "is-a" DeliveryDriver and bases the rate upon weight in ounces up to 1 pound, in pounds beginning with 16 ounces or greater
 
     |--------|-----------|-----------|-----------|
-    |        | 1st Class | 2nd Class | 3rd Class |
+    |        | 1st Class | 2nd Class | 3rd Class |		
     | Ounces | Per Mile  | Per Mile  | Per Mile  |
     |--------|-----------|-----------|-----------|
     | 0 - 2  |   0.035   |   0.0035  |   0.0020  |
@@ -49,6 +49,10 @@ SPU "is-a" DeliveryDriver and follows a simple formula based upon class, weight 
     If two-day business then rate = (weight * 0.050) * distance
     if next day then rate = (weight * 0.075) * distance
 
+
+
+
+
 #### Main
 
 
@@ -58,7 +62,7 @@ Following the approach that the morning's examples has led, create a List that r
 *Sample Output*
 
 ```
-Please enter the weight of the package? 15
+Please enter the weight of the package? 15    			save weight in var
 (P)ounds or (O)unces? O
 What distance will it be traveling to? 340
 
@@ -73,6 +77,22 @@ SPU (4-day ground)              $1.75
 SPU (2-day business)            $17.50
 SPU (next-day)                  $26.25
 ```
+
+														call calculated rate
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
 
 
 

@@ -4,9 +4,9 @@ public class Airplane {
 
 	private String planeNumber;
     private int totalFirstClassSeats;
-    private int bookedFirstClassSeats = 0;
+    private int bookedFirstClassSeats = 5;
     private int totalCoachSeats;
-    private int bookedCoachSeats = 0;
+    private int bookedCoachSeats = 30;
 
     /**
      * Creates a new airplane 

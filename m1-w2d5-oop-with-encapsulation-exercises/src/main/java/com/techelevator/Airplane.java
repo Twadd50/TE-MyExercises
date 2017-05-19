@@ -2,45 +2,52 @@ package com.techelevator;
 
 public class Airplane {
 	private String  planeNumber;
-	private int     bookedFirstClassSeat;
+	private int     bookedFirstClassSeats;
 	private int     totalFirstClassSeats;
 	private int 	bookedCoachSeats;
-	private int 	totalCoachSeats;
+	private int 	totalCoachSeats; 
 	
-	Airplane(String planeNumber, int
-				totalFirstClassSeats, int totalCoachSeats) {
+	public Airplane(String planeNumber, int totalFirstClassSeats, int totalCoachSeats) {
 		
 		this.planeNumber          = planeNumber;
 		this.totalCoachSeats      = totalCoachSeats;
 		this.totalFirstClassSeats = totalFirstClassSeats;
 		}
 	
-	public void getAvailableFirstClassSeats() {
-		totalFirstClassSeats = totalFirstClassSeats - bookedFirstClassSeat;
+	public int getAvailableFirstClassSeats() {
+		return totalFirstClassSeats - bookedFirstClassSeats;
 	}
 		
-	public void getAvaiableCoachSeats() {
-		totalCoachSeats = totalCoachSeats - bookedCoachSeats;
+	public int getAvailableCoachSeats() {
+		return totalCoachSeats - bookedCoachSeats;
 	}
-	public boolean reserveSeats (boolean forFirstClass, int totalNumberOfSeats) {
+	public boolean reserveSeats (boolean forFirstClass, int totalNumberOfSeatsRequested) {
 		if (forFirstClass == true) {
-			bookedFirstClassSeat = totalFirstClassSeats - bookedFirstClassSeat;
-		return true;
-		}
-		else if (forFirstClass == false) 
-			bookedCoachSeats = totalCoachSeats - bookedCoachSeats;
-			return false;
-	}
-	
+			if (totalNumberOfSeatsRequested > totalFirstClassSeats - bookedFirstClassSeats) {
+				return false;
+			} else {
+				bookedFirstClassSeats = bookedFirstClassSeats + totalNumberOfSeatsRequested;
+				return true;
+			}	
 		
+		} else {
+			if(totalNumberOfSeatsRequested > totalCoachSeats - bookedCoachSeats) {
+				return false;
+			} else {
+				bookedCoachSeats = bookedCoachSeats + totalNumberOfSeatsRequested;
+				return true;
+			}
+			
+		}
+	}	
 		
 
 	public String getPlaneNumber() {
 		return planeNumber;
 	}
 
-	public int getBookedFirstClassSeat() {
-		return bookedFirstClassSeat;
+	public int getBookedFirstClassSeats() {
+		return bookedFirstClassSeats;
 	}
 
 	public int getTotalFirstClassSeats() {
