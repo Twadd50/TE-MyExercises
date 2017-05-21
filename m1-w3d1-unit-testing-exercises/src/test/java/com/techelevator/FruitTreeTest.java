@@ -11,7 +11,7 @@ public class FruitTreeTest {
 	
 	@Before
 	public void setUp() throws Exception {
-		tree = new FruitTree(null, 10);
+		tree = new FruitTree("apple", 10);
 	}
 
 	@Test
@@ -30,8 +30,8 @@ public class FruitTreeTest {
 		boolean result = tree.PickFruit(13);
 		assertEquals(false , result);
 		
-		result = tree.PickFruit(13);
-		assertEquals(false, result);
+		result = tree.PickFruit(10);
+		assertEquals(true, result);
 		
 	}
 

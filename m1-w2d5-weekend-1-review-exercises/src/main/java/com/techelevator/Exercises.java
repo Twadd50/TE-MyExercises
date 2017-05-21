@@ -2,8 +2,8 @@ package com.techelevator;
 
 public class Exercises {
 
-	/*						????										returning array = int
-	 * 																	returning boolean = no int
+	/*																				returning array = int
+	 * 																					returning boolean = no int
 	 * 
 	 * 
 	 Given an array of ints, return the number of 9's in the array.
@@ -12,14 +12,13 @@ public class Exercises {
 	 arrayCount9([1, 9, 9, 3, 9]) → 3
 	 */
 	public int arrayCount9(int[] nums) {
-		int numberOfNine = i;
+		int numberOfNine = 0;
 		for(int i = 0; i < nums.length; i++) {
 			if(nums[i] == 9) {
-				numberOfNine = i;
-				return numberOfNine = i;
+				numberOfNine = numberOfNine + 1;
 			}
 		
-		}
+		}	return numberOfNine;
 		
 	}
 
@@ -34,7 +33,7 @@ public class Exercises {
 		if (nums.length < 4) {
 			times = nums.length;
 		}
-		for (int i = 0; i < times - 1; i++) {
+		for (int i = 0; i < times; i++) {
 			if (nums[i] == 9) {
 				return true;
 
@@ -43,10 +42,7 @@ public class Exercises {
 		return false;
 	}
 
-	/*   		???????
-	 * 
-	 * 
-	 * 
+	/*   	
 	 Given an array of ints, return true if .. 1, 2, 3, .. appears in the array somewhere.
 	 array123([1, 1, 2, 3, 1]) → true
 	 array123([1, 1, 2, 4, 1]) → false
@@ -54,24 +50,16 @@ public class Exercises {
 	 */
 	
 	public boolean array123(int[] nums) {
-		for (int i = 0; i < nums.length; i++) {
-			if(nums[i] == 1) {
-				if(nums[i] == 2) 
-					if(nums[i] == 3) 
+		for (int i = 0; i < nums.length - 2; i++) {
+			if(nums[i] == 1 && nums [i + 1] == 2 && nums[i + 2] == 3) {
+			
 						return true;
 				
 			}
 		}				return false;
 		
 	}
-	
-	
-	
-	
-	
-	
-			
-	/*			????
+	/*	
 	 Given an array of ints, we'll say that a triple is a value appearing 3 times in a row in the array. 
 	 Return true if the array does not contain any triples.
 	 noTriples([1, 1, 2, 2, 1]) → true
@@ -79,32 +67,33 @@ public class Exercises {
 	 noTriples([1, 1, 1, 2, 2, 2, 1]) → false
 	 */
 	public boolean noTriples(int[] nums) {
-	for(int i = 0; i < nums.length - 1; i++) {
-		if ((nums[i] == 3) && (nums[i + 1] == 3)) {
-			if(nums[i + 2] == 3) {
-				
-			}
-			return false;
-			
-		}
-	}	return true;
-	}
+		for (int i = 0; i < nums.length - 2; i++) {
+			if ((nums[i + 1]) == nums[i] && (nums[i + 1] == nums[i + 2])) {
 
-	
-	
-	
-	
-	
+				return false;
+
+			}
+		}
+		return true;
+	}
 	
 	/*
-	 Given an array of ints, return a new array length 2 containing the first and last elements from the 
-	 original array. The original array will be length 1 or more.
+	 -Given an array of ints, 
+	 --return a new array length 2 
+	 ---containing the first and last elements from the original array. 
+	 ----The original array will be length 1 or more.
+	 
 	 makeEnds([1, 2, 3]) → [1, 3]
 	 makeEnds([1, 2, 3, 4]) → [1, 4]
 	 makeEnds([7, 4, 6, 2]) → [7, 2]
 	 */
+	
 	public int[] makeEnds(int[] nums) {
-		return new int[]{};
+		int[] newArray = new int[2];
+		newArray[0] = nums[0];
+		newArray[1] = nums[nums.length - 1];
+
+		return newArray;
 	}
 
 	/*
@@ -114,6 +103,15 @@ public class Exercises {
 	 has23([4, 5]) → false
 	 */
 	public boolean has23(int[] nums) {
+	
+		for (int i = 0; i < nums.length - 1; i++) {
+			if (nums[i] == 2 || nums[i + 1] == 3) {
+				return true;
+			} else if (nums[i] == 3 || nums[i + 1] == 2) {
+				return true;
+			}
+
+		}
 		return false;
 	}
 
@@ -124,21 +122,36 @@ public class Exercises {
 	 no23([3, 5]) → false
 	 */
 	public boolean no23(int[] nums) {
-		return false;
+		for (int i = 0; i < nums.length - 1; i++) {
+			if ((nums[i] == 2) || (nums[i + 1] == 3)) {
+				return false;
+			} else if ((nums[i] == 3) || (nums[i + 1] == 2)) {
+				return false;
+			}
+		}
+		return true;
 	}
 
 	/*
-	 Given an int array, return a new array with double the length where its last element is the same as the 
-	 original array, and all the other elements are 0. The original array will be length 1 or more. Note: by 
+	 Given an int array
+	 return a new array with double the length 
+	 where its last element is the same as the original array
+	  and all the other elements are 0. 
+	  The original array will be length 1 or more. 
+	  Note: by 
 	 default, a new int array contains all 0's.
 	 makeLast([4, 5, 6]) → [0, 0, 0, 0, 0, 6]
 	 makeLast([1, 2]) → [0, 0, 0, 2]
 	 makeLast([3]) → [0, 3]
 	 */
 	public int[] makeLast(int[] nums) {
-		return new int[]{};
+		int length = nums.length * 2;
+		int[] newArray = new int[length];
+		newArray[length - 1] = nums[nums.length - 1];
+		
+		 
+		 return newArray;
 	}
-
 	/*
 	 Given an int array, return true if the array contains 2 twice, or 3 twice. The array will be length 0, 1, or 2.
 	 double23([2, 2]) → true
@@ -146,18 +159,33 @@ public class Exercises {
 	 double23([2, 3]) → false
 	 */
 	public boolean double23(int[] nums) {
-		return false;
+		for(int i = 0; i < nums.length - 1; i++) {
+			if((nums[i] == 2) && (nums[i + 1] == 2)) {
+				return true;
+			}
+			else if((nums[i] == 3) && (nums[i + 1] == 3)) {
+				return true;
+			}	
+		}	
+			return false;
 	}
 
 	/*
-	 Given an int array length 3, if there is a 2 in the array immediately followed by a 3, set the 3 element to 0. 
+	 Given an int array length 3,
+	  if there is a 2 in the array immediately followed by a 3,
+	   set the 3 element to 0. 
 	 Return the changed array.
 	 fix23([1, 2, 3]) → [1, 2, 0]
 	 fix23([2, 3, 5]) → [2, 0, 5]
 	 fix23([1, 2, 1]) → [1, 2, 1]
 	 */
 	public int[] fix23(int[] nums) {
-		return new int[]{};
+		int[] newArray = new int[3];
+		for(int i = 0; i < nums.length - 2; i++) {
+			if(nums[i] == 2 && nums[i + 1] == 3) {
+				 newArray[0] = nums[i + 1];
+			}
+		}	return newArray;
 	}
 
 	/*
@@ -318,8 +346,6 @@ public class Exercises {
 	 evenlySpaced(4, 6, 2) → true
 	 evenlySpaced(4, 6, 3) → false
 	 */
-	public boolean evenlySpaced(int a, int b, int c) {
-		return false;
-	}
-
-}
+	//public boolean evenlySpaced(int a, int b, int c) {
+		}
+//}
