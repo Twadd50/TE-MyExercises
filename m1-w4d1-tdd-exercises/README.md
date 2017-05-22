@@ -5,28 +5,6 @@ Learning how to develop software using TDD is often accomplished while practicin
 
 Work on your own to solve the following exercises while using the TDD approach.
 
-## Kata Prime Factor
-
-Factorize a positive integer number into its prime factors.
-
-Use the TDD approach to write tests that call a single method `factorize()`. Given a positive integer input n, return its prime factors.
-
-1 is always omitted from the result set.
-
-*Sample Output*
-```
-2 -> returns [2]
-3 -> returns [3]
-4 -> returns [2, 2]
-6 -> returns [2, 3]
-7 -> returns [7]
-8 -> returns [2, 2, 2]
-9 -> returns [3, 3]
-10 -> returns [2, 5]
-```
-
-Link to [Wikipedia Prime Factors](https://en.wikipedia.org/wiki/Prime_factor)
-
 
 
 ## Kata Fizz Buzz
@@ -64,7 +42,53 @@ Write tests that call a single method `fizzBuzz()`. Given a positive integer inp
 
 [Link](http://codingdojo.org/cgi-bin/index.pl?KataFizzBuzz)
 
+## Kata Potter
 
+
+
+Once upon a time there was a series of 5 books about a very English hero called Harry. (At least when this Kata was invented, there were only 5. Since then they have multiplied) Children all over the world thought he was fantastic, and, of course, so did the publisher. So in a gesture of immense generosity to mankind, (and to increase sales) they set up the following pricing model to take advantage of Harry’s magical powers.
+
+
+
+One copy of any of the five books costs 8$. If, however, you buy two different books from the series, you get a 5% discount on those two books. If you buy 3 different books, you get a 10% discount. With 4 different books, you get a 20% discount. If you go the whole hog, and buy all 5, you get a huge 25% discount.
+
+
+
+Note that if you buy, say, four books, of which 3 are different titles, you get a 10% discount on the 3 that form part of a set, but the fourth book still costs 8$.
+
+
+
+Your mission is to write a piece of code to calculate the price of any conceivable shopping basket, giving as big a discount as possible.
+
+
+
+Write tests that call a single method `decimal GetCost(int[] books)`. Given an array of integers representing the various books purchased, calculate the cost as a decimal.
+
+
+
+```
+
+2 copies of the first book
+
+2 copies of the second book
+
+2 copies of the third book
+
+1 copy of the fourth book
+
+1 copy of the fifth book
+
+
+
+(answer: $51.20)
+
+```
+
+
+
+**Clues**
+
+- This Kata looks easy to start but there is a level that introduces complexity. However, consider that when you calculate the above basket, it isn't `5 * 8 * 0.75 + 3 * 8 *0.9`. It is actually `4 * 8 * 0.8 + 4 * 8 * 0.8`. The trick is to write code intelligent enough to notice two sets of four books is cheaper than a set of five and a set of 3.
 
 ## Kata Roman Numerals
 
@@ -96,3 +120,25 @@ Note that you can't write numerals like "IM" for 999. Wikipedia says: Modern Rom
 ### Step 2
 
 Write a function to convert in the other direction from Roman Numeral to digit.
+
+## Kata Prime Factor (OPTIONAL)
+
+Factorize a positive integer number into its prime factors.
+
+Use the TDD approach to write tests that call a single method `factorize()`. Given a positive integer input n, return its prime factors.
+
+1 is always omitted from the result set.
+
+*Sample Output*
+```
+2 -> returns [2]
+3 -> returns [3]
+4 -> returns [2, 2]
+6 -> returns [2, 3]
+7 -> returns [7]
+8 -> returns [2, 2, 2]
+9 -> returns [3, 3]
+10 -> returns [2, 5]
+```
+
+Link to [Wikipedia Prime Factors](https://en.wikipedia.org/wiki/Prime_factor)
