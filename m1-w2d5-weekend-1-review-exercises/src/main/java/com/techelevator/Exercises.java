@@ -180,7 +180,7 @@ public class Exercises {
 	 fix23([1, 2, 1]) → [1, 2, 1]
 	 */
 	public int[] fix23(int[] nums) {
-		int[] newArray = new int[3];
+		int[] newArray = new int[0];
 		for(int i = 0; i < nums.length - 2; i++) {
 			if(nums[i] == 2 && nums[i + 1] == 3) {
 				 newArray[0] = nums[i + 1];
@@ -195,7 +195,14 @@ public class Exercises {
 	 start1([1, 2], []) → 1
 	 */
 	public int start1(int[] a, int[] b) {
-		return 0;
+		for(int i = 0; i < nums.length; i++) {
+			if((a == nums[i] && b == nums[i])) {
+				return 2;
+			}
+		}
+			
+				
+		
 	}
 
 	/*
@@ -325,9 +332,17 @@ public class Exercises {
 	 greenTicket(1, 1, 2) → 10
 	 */
 	public int greenTicket(int a, int b, int c) {
-		return 0;
+		if((a != b) && (a != c) && (b != c)) {
+			return 0;
+		}
+		else if ((a == b) && (b == c)) {
+			return 20;
+		}
+		else if ((a == b) || (b == c) || (a == c)) {
+			return 10;
+		}
+			return 0;
 	}
-	
 	/*
 	 Given 2 int values greater than 0, return whichever value is nearest to 21 without going over. Return 0 if they both 
 	 go over.
@@ -336,6 +351,7 @@ public class Exercises {
 	 blackjack(19, 22) → 19
 	 */
 	public int blackjack(int a, int b) {
+		if(a )
 		return 0;
 	}
 
