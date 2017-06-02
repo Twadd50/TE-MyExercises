@@ -1,6 +1,11 @@
 package com.techelevator;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
 
 public class Exercises {
 
@@ -11,8 +16,19 @@ public class Exercises {
     arrayDeduplication([1, 1, 1]) → [1]
     */
     public int[] arrayDeduplication(int[] nums) {
-        return null;
+    	int x = 0;
+    	int[] array = new int[x];
+    	Set<Array> noDuplicates = new HashSet<Array>();
+    	Set<Array> number;
+    	for (int i = 0; i < nums.length; i++) {
+    		noDuplicates = number;
+    		
+    	}
+    		return noDuplicates;
+    	
     }
+    
+    
     
     /*
     CHALLENGE: Using array A and array B, return an array that is the intersection of both A and B.
@@ -23,6 +39,9 @@ public class Exercises {
         arrayIntersection([], []) → []
     */
     public int[] arrayIntersection(int[] a, int[] b) {
+    	
+    	
+
         return null;
     }
     
@@ -43,7 +62,15 @@ public class Exercises {
     blackjack(19, 22) → 19
     */
     public int blackjack(int a, int b) {
-    	return 0;
+    	if ((a <= 21 && b < a)) {
+    		return a;
+    	}
+    	else if ((b <= 21 && a < b))	 {
+    		return b;
+    	}
+    	else 
+    		return 0;
+    		
     }
     
     /*

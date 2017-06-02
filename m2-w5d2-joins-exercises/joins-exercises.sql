@@ -2,15 +2,32 @@
 
 -- 1. All of the films that Nick Stallone has appeared in
 -- (30 rows)
+SELECT film.title, actor.first_name, actor.last_name
+FROM actor
+JOIN film_actor ON actor.actor_id = film_actor.actor_id         -- ON = how are they joined (references chart)
+JOIN film ON film_actor.film_id = film.film_id
+WHERE actor.first_name = 'NICK' AND actor.last_name = 'STALLONE'
 
 -- 2. All of the films that Rita Reynolds has appeared in
 -- (20 rows)
+SELECT film.title, actor.first_name, actor.laast_name
+FROM actor
+JOIN film_actor ON actor.actor_id = film_actor.actor_id
+JOIN film ON film_actor.film_id = film.film_id
+WHERE actor.first_name ='RITA' AND actor.last_name = 'REYNOLDS'
 
 -- 3. All of the films that Judy Dean or River Dean have appeared in
 -- (46 rows)
+SELECT film.title, actor.first_name, actor.last_name
+FROM actor
+JOIN film_actor ON actor.actor_id = film_actor.actor_id
+JOIN film ON film_actor.film_id = film.film_id
+WHERE actor.first_name = 'JUDY' AND actor.last_name = 'DEAN' 
+OR actor.first_name = 'RIVER' AND actor.last_name = 'DEAN'
 
 -- 4. All of the the ‘Documentary’ films
 -- (68 rows)
+SELECT film.
 
 -- 5. All of the ‘Comedy’ films
 -- (58 rows)
