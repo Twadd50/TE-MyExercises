@@ -2,7 +2,7 @@
 -- The following changes are applied to the "pagila" database.**
                
                
-                Finish 5  /  Fix category table?
+                
 
         DONE-- 1. Add actors, Hampton Avenue, and Lisa Byway to the actor table.
 INSERT INTO actor (first_name, last_name) VALUES ('Lisa', 'Byway');

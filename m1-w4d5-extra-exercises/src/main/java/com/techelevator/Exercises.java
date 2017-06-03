@@ -3,6 +3,7 @@ package com.techelevator;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
@@ -13,20 +14,21 @@ public class Exercises {
     Given an integer array, return the array with all of the duplicate values removed.
     arrayDeduplication([8, 13, 13, 9, 11, 12]) → [8, 13, 9, 11, 12]
     arrayDeduplication([]) → []        
-    arrayDeduplication([1, 1, 1]) → [1]
-    */
+    arrayDeduplication([1, 1, 1]) → [1]		//use FOR EACH when looping through entire set and dont care about order, how many times looped through. 
+    */										//use FOR loop can go backwards, start at different points, etc
     public int[] arrayDeduplication(int[] nums) {
-    	int x = 0;
-    	int[] array = new int[x];
-    	Set<Array> noDuplicates = new HashSet<Array>();
-    	Set<Array> number;
-    	for (int i = 0; i < nums.length; i++) {
-    		noDuplicates = number;
-    		
-    	}
-    		return noDuplicates;
+    		Set<Integer> noDuplicates = new LinkedHashSet<Integer>();    // Linked - preserves order
+    		for (int i = 0; i < nums.length; i++) {
+    			noDuplicates.add(nums[i]);								//adding each number in loop to the set not including duplicates
+    		}
+    		int[] noDupesArray = new int[noDuplicates.size()];			//creating new array and noDupesArray = to size of noDuplicates
+    		int i = 0;
+    		for(Integer value : noDuplicates) {							//Integer = datatype value = variable filling up 
+    			noDupesArray[i++] = value;					//i++ makes sure 0 increments	//go thru noDupes get value for each element setting it to index of noDupeArray
+    		}
+    		return noDupesArray;
     	
-    }
+    	}
     
     
     
@@ -51,7 +53,8 @@ public class Exercises {
     arraySort([8, 13, 9, 12]) → [8, 9, 12, 13]        
     */
     public int[] arraySort(int[] nums) {
-        return null;
+    	int[] arraySort = null;
+        return arraySort;
     }
 
     /*
@@ -62,14 +65,14 @@ public class Exercises {
     blackjack(19, 22) → 19
     */
     public int blackjack(int a, int b) {
-    	if ((a <= 21 && b < a)) {
+    	if((a > 21 && b > 21)) {
+    		return 0;
+    	}
+    	else if ((a <= 21 && b < a)) {
     		return a;
     	}
-    	else if ((b <= 21 && a < b))	 {
+    	else if ((b <= 21 && a < b))	 
     		return b;
-    	}
-    	else 
-    		return 0;
     		
     }
     
