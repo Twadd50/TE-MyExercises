@@ -92,7 +92,7 @@ JOIN city ON address.city_id = city.city_id
 JOIN country ON city.country_id = country.country_id
 
 
--- 12. A list of all stores by ID, the store’s street address, and the name of the store’s manager
+        ?-- 12. A list of all stores by ID, the store’s street address, and the name of the store’s manager
 -- (2 rows)
 SELECT store.store_id, address.address, staff.first_name, staff.last_name
 FROM store
@@ -102,14 +102,24 @@ WHERE store.manger_staff_id = staff.first_name  AND address.address_id = 'addres
 
 SELECT store.store_id, 
 
--- 13. The first and last name of the top ten customers ranked by number of rentals 
+        ?-- 13. The first and last name of the top ten customers ranked by number of rentals 
 -- (#1 should be “ELEANOR HUNT” with 46 rentals, #10 should have 39 rentals)
 SELECT customer.first_name, customer.last_name, rental.rental_id, inventory_id
 FROM rental
 JOIN customer ON rental.customer_id = customer.customer_id
 
+
 -- 14. The first and last name of the top ten customers ranked by dollars spent 
 -- (#1 should be “KARL SEAL” with 221.55 spent, #10 should be “ANA BRADLEY” with 174.66 spent)
+SELECT customer.first_name, customer.last_name, SUM(payment.amount)
+FROM customer 
+JOIN payment ON customer.customer_id = payment.customer_id
+WHERE payment.amount 
+
+SELECT AVG (*) payment.amount
+FROM payment
+JOIN customer ON payment.customer_id = customer.customer_id
+
 
 -- 15. The store ID, street address, total number of rentals, total amount of sales (i.e. payments), and average sale of each store 
 -- (Store 1 has 7928 total rentals and Store 2 has 8121 total rentals)

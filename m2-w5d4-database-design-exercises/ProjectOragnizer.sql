@@ -44,3 +44,5 @@ values ('5', 'Arty', 'Fischel', 'M', '10/6/22', '3/9/2016', 'technology');
 values ('6', 'Hugh', 'Jass', 'M', '2/7/83', '12/12/1999', 'sales');
 values ('7', 'Joe', 'King', 'M', '7/4/1950', '3/11/2017', 'legal');
 values ('8', 'Anita', 'Bath', 'F', '4/12/88', '10/8/2010', 'sales');
+
+select * from department where department_name LIKE '%l%'
